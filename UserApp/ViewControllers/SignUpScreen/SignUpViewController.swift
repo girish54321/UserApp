@@ -9,21 +9,48 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onClickSignUp(_ sender: Any) {
+        createAccount()
     }
-    */
-
+    
+    func createAccount(){
+        let postData : [String: Any] = [
+            "email": emailText.text!,
+            "password": passwordText.text!
+        ]
+        
+        let okButton = Alert().makeUIAlertButton(title: "Ok", style: .default, actionFunction: {
+            print("Ok Tap")
+        })
+        
+        AuthServices().createAccount(parameters: postData){
+            result in
+            switch result {
+            case .success(let data):
+                let vc = WelcomeViewController()
+                NavigationHelper().createNewRootNavigation(vc: self, rootVC: vc, style: .fullScreen, prefersLargeTitles: true)
+            case .failure(let error):
+                switch error {
+                case .NetworkErrorAPIError(let errorMessage):
+                    print("Error Message")
+                    print(errorMessage)
+                    Alert().showNormlaAleat(title: "Error", message: errorMessage, vc: self, actionsList: [okButton])
+                case .BadURL:
+                    print("BadURL")
+                case .NoData:
+                    print("NoData")
+                case .DecodingErrpr:
+                    print("DecodingErrpr")
+                }
+            }
+        }
+        
+    }
 }

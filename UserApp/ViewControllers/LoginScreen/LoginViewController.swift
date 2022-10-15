@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLoginBtnTap(_ sender: Any) {
-        userLoginApt(email: "eve.holt@reqres.in", password: "cityslicka")
+        userLoginApt()
     }
     
     @IBAction func onSignUpBtnTap(_ sender: Any) {
@@ -27,33 +27,40 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func userLoginApt (email: String,password: String) {
-        let postData: [String:Any] = [
-            "email": email,
-            "password": password
+    func userLoginApt(){
+        let postData : [String: Any] = [
+//            "email": emailText.text!,
+//            "password": passwordText.text!
+            "email": "eve.holt@reqres.in",
+            "password": "cityslicka"
         ]
-        let okButton = Alert().makeUIAlertButton(title: "Ok", style: .default, actionFunction: {
+        
+        let okButton = Alert().makeUIAlertButton(title: "ok", style: .default, actionFunction: {
+            print("ok taped")
         })
-        AuthService().userLogin(parameters: postData) { result in
+        
+        AuthServices().userLogin(parameters: postData){
+            result in
             switch result {
             case .success(let data):
-                let value = data
-                Alert().showNormlaAleat(title: "Token", message: value.token ?? "nil", vc: self, actionsList: [okButton])
+                AppStorage().saveUserState(email: self.emailText.text!, tokan: data.token!)
+                let vc = WelcomeViewController()
+                NavigationHelper().createNewRootNavigation(vc: self, rootVC: vc, style: .fullScreen, prefersLargeTitles: true)
             case .failure(let error):
                 switch error {
-                case .NetworkErrorAPIError(let mess):
-                    Alert().showNormlaAleat(title: "Error", message: mess, vc: self, actionsList: [okButton])
+                case .NetworkErrorAPIError(let errorMessage):
+                    Alert().showNormlaAleat(title: "Error", message: errorMessage, vc: self, actionsList:[okButton] )
                 case .BadURL:
                     print("BadURL")
                 case .NoData:
                     print("NoData")
-                case .DecodingError:
-                    print("DecodingError")
+                case .DecodingErrpr:
+                    print("DecodingErrpr")
                 }
-                print(error)
             }
         }
     }
+
 }
 
 

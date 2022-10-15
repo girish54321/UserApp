@@ -1,21 +1,25 @@
 //
-//  APIEndpoint.swift
+//  AuthApiEndpoint.swift
 //  UserApp
 //
-//  Created by Girish Parate on 25/09/22.
+//  Created by Girish Parate on 01/10/22.
 //
 
 import Foundation
+
 class AuthApiEndpoint {
     
-    enum ApiType {
+    enum AuthApiType {
         case login
+        case register
     }
     
-    func createEndPoint(endPoint: ApiType) -> String {
+    func createEndPoint(endPoint: AuthApiType) -> String {
         switch endPoint {
         case .login:
             return createApi(endPoint: "/login")
+        case .register:
+            return createApi(endPoint: "/register")
         }
     }
     

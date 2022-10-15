@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectedUserViewController" customModule="UserApp" customModuleProvider="target">
+            <connections>
+                <outlet property="userEmail" destination="U0H-bL-Dbc" id="xdW-dF-xzo"/>
+                <outlet property="userImage" destination="Ddq-SR-38k" id="Oe1-6H-1fE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="Ddq-SR-38k">
+                    <rect key="frame" x="115" y="59" width="160" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="4J5-ke-2Zb"/>
+                        <constraint firstAttribute="height" constant="160" id="AgL-aD-NSY"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0H-bL-Dbc">
+                    <rect key="frame" x="12" y="233" width="366" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="SlT-LW-oG9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U0H-bL-Dbc" secondAttribute="trailing" constant="12" id="92B-HD-6EA"/>
+                <constraint firstItem="U0H-bL-Dbc" firstAttribute="top" secondItem="Ddq-SR-38k" secondAttribute="bottom" constant="14" id="DRx-zB-dHK"/>
+                <constraint firstItem="Ddq-SR-38k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="IP3-FR-4q4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ddq-SR-38k" secondAttribute="trailing" constant="115" id="RxL-RV-Kaa"/>
+                <constraint firstItem="U0H-bL-Dbc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="iWP-JW-LrS"/>
+                <constraint firstItem="Ddq-SR-38k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="115" id="ykV-aB-BMB"/>
+            </constraints>
+            <point key="canvasLocation" x="57" y="-12"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="image" width="320" height="180"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

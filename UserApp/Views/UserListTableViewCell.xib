@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="UserListTableViewCell" customModule="UserApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="397" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="xwC-5D-g1c">
+                        <rect key="frame" x="12" y="12" width="120" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="1nu-Hm-95X"/>
+                            <constraint firstAttribute="width" constant="120" id="kew-3M-vvb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Girish Parate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8G-zB-PNs">
+                        <rect key="frame" x="144" y="12" width="241" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="VbD-OK-nfg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14/08/1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y77-yX-zZN">
+                        <rect key="frame" x="298.33333333333331" y="111" width="86.666666666666686" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="IhH-Iz-vic"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGm-0D-4kL">
+                        <rect key="frame" x="144" y="45" width="241" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="QN1-4X-sTt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Y77-yX-zZN" secondAttribute="bottom" constant="12" id="3C6-Vu-enD"/>
+                    <constraint firstAttribute="bottom" secondItem="xwC-5D-g1c" secondAttribute="bottom" constant="12" id="5fw-Hj-fdP"/>
+                    <constraint firstItem="xwC-5D-g1c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="8F6-a3-LMV"/>
+                    <constraint firstItem="xwC-5D-g1c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Bzb-gn-Pu8"/>
+                    <constraint firstAttribute="trailing" secondItem="pGm-0D-4kL" secondAttribute="trailing" constant="12" id="LCx-Z4-g0O"/>
+                    <constraint firstItem="pGm-0D-4kL" firstAttribute="top" secondItem="c8G-zB-PNs" secondAttribute="bottom" constant="12" id="Tdk-bL-x0g"/>
+                    <constraint firstItem="c8G-zB-PNs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Xlh-rU-d5O"/>
+                    <constraint firstItem="pGm-0D-4kL" firstAttribute="leading" secondItem="xwC-5D-g1c" secondAttribute="trailing" constant="12" id="Ze7-FF-1QD"/>
+                    <constraint firstItem="Y77-yX-zZN" firstAttribute="top" secondItem="pGm-0D-4kL" secondAttribute="bottom" constant="45" id="bLt-BJ-x4Q"/>
+                    <constraint firstAttribute="trailing" secondItem="Y77-yX-zZN" secondAttribute="trailing" constant="12" id="cmd-6s-qGB"/>
+                    <constraint firstAttribute="trailing" secondItem="c8G-zB-PNs" secondAttribute="trailing" constant="12" id="nzZ-3U-0Nj"/>
+                    <constraint firstItem="c8G-zB-PNs" firstAttribute="leading" secondItem="xwC-5D-g1c" secondAttribute="trailing" constant="12" id="xFb-hC-jjF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="createdDate" destination="Y77-yX-zZN" id="zrK-tn-fgh"/>
+                <outlet property="userEmail" destination="pGm-0D-4kL" id="ehY-bN-7Me"/>
+                <outlet property="userImage" destination="xwC-5D-g1c" id="vsA-OH-zd2"/>
+                <outlet property="userName" destination="c8G-zB-PNs" id="z5W-NB-N0t"/>
+            </connections>
+            <point key="canvasLocation" x="397.69230769230768" y="34.123222748815166"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image" width="320" height="180"/>
+    </resources>
+</document>

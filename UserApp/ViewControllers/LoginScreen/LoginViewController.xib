@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UserApp" customModuleProvider="target">
             <connections>
-                <outlet property="emailText" destination="8ic-GE-8D6" id="c83-YH-hyW"/>
-                <outlet property="passwordText" destination="pWG-wG-i9K" id="AKb-lh-l1k"/>
+                <outlet property="emailText" destination="8ic-GE-8D6" id="fdN-fS-FbQ"/>
+                <outlet property="passwordText" destination="pWG-wG-i9K" id="zLX-UF-RYx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -8,21 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
             self.showRootVC()
         }
     }
-
+    
     func showRootVC () {
-        let vc = LoginViewController()
-        let navVC = UINavigationController(rootViewController: vc)
-        navVC.navigationBar.prefersLargeTitles = true
-        navVC.modalPresentationStyle = .fullScreen
-        self.present(navVC, animated: true)
+        let isLogedIn = AppStorage().isLogedIn()
+        var vc: UIViewController = LoginViewController()
+        if(isLogedIn == true){
+            vc = WelcomeViewController()
+        }
+        NavigationHelper().createNewRootNavigation(vc: self,
+                                                   rootVC: vc,
+                                                   style: .fullScreen,
+                                                   prefersLargeTitles: true)
     }
-
+    
 }
 
