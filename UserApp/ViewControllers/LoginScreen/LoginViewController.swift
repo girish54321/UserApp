@@ -13,9 +13,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+    let progressHUD = ProgressHUD(text: "Loading..")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.addSubview(progressHUD)
+        progressHUD.hide()
     }
     
     @IBAction func onLoginBtnTap(_ sender: Any) {
@@ -29,8 +32,8 @@ class LoginViewController: UIViewController {
     
     func userLoginApt(){
         let postData : [String: Any] = [
-//            "email": emailText.text!,
-//            "password": passwordText.text!
+            //"email": emailText.text!,
+            //"password": passwordText.text!
             "email": "eve.holt@reqres.in",
             "password": "cityslicka"
         ]
@@ -38,9 +41,10 @@ class LoginViewController: UIViewController {
         let okButton = Alert().makeUIAlertButton(title: "ok", style: .default, actionFunction: {
             print("ok taped")
         })
-        
+        progressHUD.show()
         AuthServices().userLogin(parameters: postData){
             result in
+            self.progressHUD.hide()
             switch result {
             case .success(let data):
                 AppStorage().saveUserState(email: self.emailText.text!, tokan: data.token!)
@@ -60,7 +64,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 

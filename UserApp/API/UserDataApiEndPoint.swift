@@ -20,6 +20,6 @@ class UserDataApiEndPoint {
     }
     
     func createApi(endPoint: String) -> String {
-        return "https://reqres.in/api" + endPoint
+        return AppConst.ApiConst().apiEndPoint + endPoint
     }
 }

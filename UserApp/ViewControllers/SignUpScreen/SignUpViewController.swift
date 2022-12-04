@@ -12,8 +12,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+    let progressHUD = ProgressHUD(text: "Loading..")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(progressHUD)
+        self.progressHUD.hide()
     }
 
     @IBAction func onClickSignUp(_ sender: Any) {
@@ -29,9 +33,10 @@ class SignUpViewController: UIViewController {
         let okButton = Alert().makeUIAlertButton(title: "Ok", style: .default, actionFunction: {
             print("Ok Tap")
         })
-        
+        progressHUD.hide()
         AuthServices().createAccount(parameters: postData){
             result in
+            self.progressHUD.hide()
             switch result {
             case .success(let data):
                 let vc = WelcomeViewController()

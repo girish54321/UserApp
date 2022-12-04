@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController, UISearchResultsUpdating, UISearch
     // For Seaech
     var resultSearchController = UISearchBar()
     var searchController = UISearchController()
+    let progressHUD = ProgressHUD(text: "Loading..")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class WelcomeViewController: UIViewController, UISearchResultsUpdating, UISearch
         
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
+        self.view.addSubview(progressHUD)
     }
     
     func setUpTableView(){
@@ -137,15 +139,17 @@ extension WelcomeViewController {
             "page": usersList?.page ?? 1
         ]
         isLoading = true
+        progressHUD.show()
         UserServices().getUserList(parameters: params){
             result in
             self.isLoading = false
+            self.progressHUD.hide()
             switch result {
             case .success(let data):
                 if(self.usersList == nil){
                     self.usersList = data
                     self.orignalUsersList = data
-                }else{
+                } else {
                     self.usersList?.data?.append(contentsOf: data.data!)
                     self.usersList?.page = data.page! + 1
                     self.usersList?.totalPages = data.totalPages

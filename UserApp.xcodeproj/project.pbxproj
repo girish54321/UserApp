@@ -37,6 +37,7 @@
 		F4AE928B28DC868A00D60321 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE928928DC868A00D60321 /* SignUpViewController.swift */; };
 		F4AE928C28DC868A00D60321 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AE928A28DC868A00D60321 /* SignUpViewController.xib */; };
 		F4BF814928DCA3B60061B31A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF814828DCA3B60061B31A /* LoginResponse.swift */; };
+		F4D9024A29043B760028B954 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9024929043B760028B954 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		F4AE928928DC868A00D60321 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F4AE928A28DC868A00D60321 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		F4BF814828DCA3B60061B31A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		F4D9024929043B760028B954 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				F417DF0228E8465B003CAD78 /* AuthServices.swift */,
 				F481014828F1BB2100E4ED27 /* UserDataApiEndPoint.swift */,
 				F481014A28F1BBE000E4ED27 /* UserService.swift */,
+				F4D9024929043B760028B954 /* Const.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				F417DF0828E86961003CAD78 /* WelcomeViewController.swift in Sources */,
 				F417DEFC28E8066D003CAD78 /* UIHelper.swift in Sources */,
 				F4BF814928DCA3B60061B31A /* LoginResponse.swift in Sources */,
+				F4D9024A29043B760028B954 /* Const.swift in Sources */,
 				F417DF0028E84540003CAD78 /* AuthApiEndpoint.swift in Sources */,
 				F417DF0328E8465B003CAD78 /* AuthServices.swift in Sources */,
 				F481015128F1CBD400E4ED27 /* UserListTableViewCell.swift in Sources */,
